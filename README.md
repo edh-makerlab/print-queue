@@ -1,5 +1,7 @@
 # edh-print-queue
 
+[![Build Status](https://travis-ci.org/edh-makerlab/print-queue.svg?branch=master)](https://travis-ci.org/edh-makerlab/print-queue)
+
 This project was generated with the [Angular Full-Stack Generator](https://github.com/DaftMonk/generator-angular-fullstack) version 4.1.3.
 
 ## Getting Started
