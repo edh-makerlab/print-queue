@@ -16,7 +16,10 @@ function onConnect(socket) {
   });
 
   // Insert sockets below
-  require('../api/thing/thing.socket').register(socket);
+  require('../api/job/job.socket').register(socket);
+  require('../api/location/location.socket').register(socket);
+  require('../api/membership/membership.socket').register(socket);
+  require('../api/printer/printer.socket').register(socket);
 }
 
 export default function(socketio) {

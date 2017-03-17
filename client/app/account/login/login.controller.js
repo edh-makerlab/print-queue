@@ -35,8 +35,8 @@ export default class LoginController {
         password: this.user.password
       })
         .then(() => {
-          // Logged in, redirect to home
-          this.$state.go('main');
+          // Logged in, redirect to queue page
+          this.$state.go('queue');
         })
         .catch(err => {
           this.errors.login = err.message;

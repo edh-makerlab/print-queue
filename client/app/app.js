@@ -26,11 +26,12 @@ import main from './main/main.component';
 import constants from './app.constants';
 import util from '../components/util/util.module';
 import socket from '../components/socket/socket.service';
+import queue from './queue';
 
 import './app.scss';
 
 angular.module('edhPrintQueueApp', [ngCookies, ngResource, ngSanitize, 'btford.socket-io', uiRouter,
-  uiBootstrap, _Auth, account, admin, navbar, footer, main, constants, socket, util
+  uiBootstrap, _Auth, account, admin, navbar, footer, main, queue, constants, socket, util
 ])
   .config(routeConfig)
   .run(function($rootScope, $location, Auth) {
