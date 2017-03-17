@@ -1,0 +1,46 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <p>Current credit: </p>
+      <p>The print credit is renewed on a monthly basis.</p>
+      <button class="btn btn-primary" ui-sref="queue-new-job">Submit Job</button>
+      <br>
+    </div>
+  </div>
+
+  <div class="row" style="margin-top:10px">
+    <div class="col-sm-12">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Print Job</th>
+            <th>Date</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-success text-white" ui-sref="queue-job({'id':1})">
+              <td scope="row">1</td>
+              <td></td>
+              <td>Ready</td>
+          </tr>
+          <tr class="bg-danger text-white">
+            <td scope="row">my beautiful awesome base</td>
+            <td></td>
+            <td>Unable to print</td>
+          </tr>
+          <tr class="bg-warning text-white">
+            <td scope="row">3</td>
+            <td></td>
+            <td>Need Info</td>
+          </tr>
+          <tr>
+            <td scope="row">3</td>
+            <td></td>
+            <td>In Queue</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

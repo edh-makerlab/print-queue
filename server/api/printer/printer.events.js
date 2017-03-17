@@ -1,14 +1,14 @@
 /**
- * Thing model events
+ * Printer model events
  */
 
 'use strict';
 
 import {EventEmitter} from 'events';
-var ThingEvents = new EventEmitter();
+var PrinterEvents = new EventEmitter();
 
 // Set max event listeners (0 == unlimited)
-ThingEvents.setMaxListeners(0);
+PrinterEvents.setMaxListeners(0);
 
 // Model events
 var events = {
@@ -17,19 +17,19 @@ var events = {
 };
 
 // Register the event emitter to the model events
-function registerEvents(Thing) {
+function registerEvents(Printer) {
   for(var e in events) {
     let event = events[e];
-    Thing.post(e, emitEvent(event));
+    Printer.post(e, emitEvent(event));
   }
 }
 
 function emitEvent(event) {
   return function(doc) {
-    ThingEvents.emit(`${event}:${doc._id}`, doc);
-    ThingEvents.emit(event, doc);
+    PrinterEvents.emit(`${event}:${doc._id}`, doc);
+    PrinterEvents.emit(event, doc);
   };
 }
 
 export {registerEvents};
-export default ThingEvents;
+export default PrinterEvents;
