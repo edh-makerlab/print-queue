@@ -10,12 +10,20 @@ export default function routes($stateProvider) {
     controllerAs: 'admin',
     authenticate: 'admin'
   })
-  .state('locations', {
+  .state('admin-locations', {
     url: '/admin/location',
     referrer: 'admin',
     template: require('./location/index.html'),
     controller: 'LocationController',
     controllerAs: 'vm',
+    authenticate: 'admin'
+  })
+  .state('admin-users', {
+    url: '/admin/user',
+    referrer: 'admin',
+    template: require('./user/index.html'),
+    controller: 'AdminController',
+    controllerAs: 'admin',
     authenticate: 'admin'
   });
 }
