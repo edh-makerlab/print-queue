@@ -65,7 +65,9 @@ function handleError(res, statusCode) {
 
 // Gets a list of Jobs
 export function index(req, res) {
-  return Job.find().exec()
+  var userId = req.user._id;
+  console.log("jobs index: user "+userId)
+  return Job.find({ _user: userId }).exec()
     .then(respondWithResult(res))
     .catch(handleError(res));
 }

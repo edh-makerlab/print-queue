@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import {registerEvents} from './job.events';
 
 var JobSchema = new mongoose.Schema({
-  user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
+  _user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   title: String,
   details: String,
   status: String,

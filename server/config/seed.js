@@ -27,9 +27,36 @@ export default function seedDatabaseIfNeeded() {
           email: 'admin@example.com',
           password: 'admin'
         })
-        .then(() => console.log('finished populating users'))
+        .then(() => {
+          // TODO: clean this up. The dependencies are kind of messy.
+          console.log('finished populating users')
+          User.findOne({ name: 'Admin' }).exec((err, user) => {
+            console.log("err: "+ err);
+            console.log("user: "+user);
+            Job.find({}).remove()
+              .then(() => {
+                Job.create({
+                  _user: user._id,
+                  title: "My nice job",
+                  details: "foo bar url://...",
+                  status: "New",
+                },
+                {
+                  _user: user._id,
+                  title: "My nice job 2",
+                  details: "foo bar url://...",
+                  status: "New",
+                })
+                .then(() => console.log('finished populating jobs'))
+                .catch(err => console.log('error populating jobs', err));
+              })
+          });
+        })
         .catch(err => console.log('error populating users', err));
       });
+
+
+
 
     Location.find({}).remove()
       .then(() => {

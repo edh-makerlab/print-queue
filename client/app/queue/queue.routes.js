@@ -6,8 +6,8 @@ export default function routes($stateProvider) {
   $stateProvider.state('queue', {
     url: '/queue',
     template: require('./queue.html'),
-    controller: 'QueueController',
-    controllerAs: 'q',
+    controller: 'JobController',
+    controllerAs: 'vm',
     authenticate: 'user'
   })
   .state('queue-new-job', {
